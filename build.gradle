@@ -3,13 +3,20 @@ plugins {
 }
 
 repositories {
-    mavenCentral ()
+    mavenCentral()
 }
 
-task.withType(JavaCompile) {
-    option.encoding='UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
-    testImplementation()
+    testImplementation (
+            "com.codeborne:selenide:6.10.0",
+            "org.junit.jupiter:junit-jupiter:5.9.0"
+    )
+}
+
+test {
+    useJUnitPlatform()
 }
