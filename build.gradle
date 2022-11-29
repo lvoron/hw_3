@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral ()
+}
+
+task.withType(JavaCompile) {
+    option.encoding='UTF-8'
+}
+
+dependencies {
+    testImplementation()
+}
