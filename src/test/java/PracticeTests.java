@@ -6,7 +6,7 @@ import com.codeborne.selenide.selector.ByText;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.by;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeTests {
@@ -39,7 +39,8 @@ public class PracticeTests {
         $("#firstName").setValue(userName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
-        $(by("for","gender-radio-2")).click();
+        // $(by("value","gender-radio-2")).click();
+        $("#genterWrapper").$(byText(userGender)).click(); //изменено
         // $(".custom-control-label").click();
         $("#userNumber").setValue(userPhone);
 
@@ -57,7 +58,8 @@ public class PracticeTests {
         $("#subjectsInput").pressTab();
 
         $("#uploadPicture").uploadFile(new File("src/test/resources/HW_3.jpg"));
-        $(by("for","hobbies-checkbox-3")).click();
+        //$(by("for","hobbies-checkbox-3")).click();
+        $("#hobbiesWrapper").$(byText(hobby)).click(); //изменено
         $("#currentAddress").setValue(addres);
         $("#state").click();
         $("#stateCity-wrapper").$(new ByText(state)).click();
